@@ -1,0 +1,11 @@
+{
+  "name": "work-tracking",
+  "version": "0.1.0",
+  "description": "Canonical work graphs, ticket drafts, triage, and tracker-neutral local exports.",
+  "author": {
+    "name": "Leotus-Richard"
+  },
+  "homepage": "https://github.com/Leotus-Richard/work-tracking",
+  "repository": "https://github.com/Leotus-Richard/work-tracking.git",
+  "license": "MIT"
+}

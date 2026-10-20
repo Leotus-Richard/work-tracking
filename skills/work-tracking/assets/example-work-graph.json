@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "synthetic-example",
+  "asOf": "2026-10-14T00:00:00Z",
+  "items": [
+    {
+      "id": "P-1", "kind": "project", "title": "Synthetic service rollout", "owner": null,
+      "state": "backlog", "inputs": [], "outputs": [], "acceptance": ["Child work is verified"],
+      "completionEvidence": [], "externalInputEvidence": [], "failurePolicy": "ESCALATE"
+    },
+    {
+      "id": "D-1", "kind": "decision", "title": "Choose service contract", "owner": null,
+      "state": "done", "inputs": [], "outputs": ["service-contract"],
+      "acceptance": ["Decision and rationale recorded"],
+      "completionEvidence": [{"token": "service-contract", "reference": "synthetic-fixture:decision"}],
+      "externalInputEvidence": [], "failurePolicy": "ESCALATE"
+    },
+    {
+      "id": "T-1", "kind": "task", "title": "Build service", "owner": null,
+      "state": "ready", "inputs": ["service-contract"], "outputs": ["verified-build"],
+      "acceptance": ["Contract tests pass"], "completionEvidence": [], "externalInputEvidence": [],
+      "failurePolicy": "REPAIR", "traceability": {"goalIds": ["G-1"], "requirementIds": ["REQ-1"]}
+    },
+    {
+      "id": "T-2", "kind": "task", "title": "Write user guide", "owner": null,
+      "state": "ready", "inputs": ["service-contract"], "outputs": ["verified-guide"],
+      "acceptance": ["Examples match the decided contract"], "completionEvidence": [],
+      "externalInputEvidence": [], "failurePolicy": "REPAIR"
+    },
+    {
+      "id": "A-1", "kind": "approval", "title": "Approve rollout", "owner": null,
+      "state": "ready", "inputs": ["verified-build", "verified-guide"], "outputs": ["rollout-authority"],
+      "acceptance": ["Named authorized reviewer approves verified evidence"], "completionEvidence": [],
+      "externalInputEvidence": [], "failurePolicy": "ESCALATE"
+    },
+    {
+      "id": "T-3", "kind": "task", "title": "Roll out service", "owner": null,
+      "state": "backlog", "inputs": ["rollout-authority"], "outputs": ["verified-rollout"],
+      "acceptance": ["Authorized rollout passes health checks"], "completionEvidence": [],
+      "externalInputEvidence": [], "failurePolicy": "STOP"
+    }
+  ],
+  "edges": [
+    {"id": "H-1", "type": "contains", "from": "P-1", "to": "T-1", "reason": "Project owns work"},
+    {"id": "E-1", "type": "blocks", "from": "D-1", "to": "T-1", "contract": "data", "carries": ["service-contract"], "reason": "Implementation consumes contract"},
+    {"id": "E-2", "type": "blocks", "from": "D-1", "to": "T-2", "contract": "data", "carries": ["service-contract"], "reason": "Guide consumes contract"},
+    {"id": "E-3", "type": "blocks", "from": "T-1", "to": "A-1", "contract": "data", "carries": ["verified-build"], "reason": "Review consumes tested build"},
+    {"id": "E-4", "type": "blocks", "from": "T-2", "to": "A-1", "contract": "data", "carries": ["verified-guide"], "reason": "Review consumes verified guide"},
+    {"id": "E-5", "type": "blocks", "from": "A-1", "to": "T-3", "contract": "authority", "carries": ["rollout-authority"], "reason": "Rollout requires actual approval"}
+  ],
+  "scheduleConstraints": [
+    {"from": "T-1", "to": "T-2", "type": "SS", "lag": 0, "unit": "working-day"}
+  ]
+}

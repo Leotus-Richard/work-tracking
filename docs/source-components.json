@@ -1,0 +1,40 @@
+[
+  {
+    "sourceSkill": "work-tracking",
+    "packagedPath": "skills/work-tracking",
+    "suppliedLicenseFiles": [],
+    "missingLicenseResolution": "MIT selected directly by repository owner on 2026-10-20; not an upstream license assertion"
+  },
+  {
+    "sourceSkill": "to-tickets",
+    "packagedPath": "skills/to-tickets",
+    "suppliedLicenseFiles": [
+      "LICENSE"
+    ],
+    "missingLicenseResolution": null
+  },
+  {
+    "sourceSkill": "triage",
+    "packagedPath": "skills/triage",
+    "suppliedLicenseFiles": [
+      "LICENSE"
+    ],
+    "missingLicenseResolution": null
+  },
+  {
+    "sourceSkill": "wayfinder",
+    "packagedPath": "skills/wayfinder",
+    "suppliedLicenseFiles": [
+      "LICENSE"
+    ],
+    "missingLicenseResolution": null
+  },
+  {
+    "sourceSkill": "setup-matt-pocock-skills",
+    "packagedPath": "skills/project-work-tracking-setup",
+    "suppliedLicenseFiles": [
+      "LICENSE"
+    ],
+    "missingLicenseResolution": null
+  }
+]

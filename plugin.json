@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "work-tracking",
+  "version": "0.1.0",
+  "description": "Canonical work graphs, ticket drafts, triage, and tracker-neutral local exports.",
+  "author": {
+    "name": "Leotus-Richard"
+  },
+  "homepage": "https://github.com/Leotus-Richard/work-tracking",
+  "repository": "https://github.com/Leotus-Richard/work-tracking.git",
+  "license": "MIT",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Work Tracking",
+        "shortDescription": "Canonical work graphs, ticket drafts, triage, and tracker-neu.",
+        "developerName": "Leotus-Richard",
+        "category": "Productivity"
+      }
+    }
+  }
+}

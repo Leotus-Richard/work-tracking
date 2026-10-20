@@ -1,0 +1,27 @@
+{
+  "warning": "SYNTHETIC FIXTURES ONLY. Select one platform object and replace all destination and mapping values with verified workspace configuration. Do not publish these examples.",
+  "github": {
+    "platform": "github", "owner": "EXAMPLE-OWNER", "repo": "EXAMPLE-REPO",
+    "states": {"backlog": "state:backlog", "ready": "state:ready", "in_progress": "state:in-progress", "done": "state:done", "cancelled": "state:cancelled"},
+    "kinds": {"project": "kind:project", "decision": "kind:decision", "task": "kind:task", "approval": "kind:approval"},
+    "bindings": {}
+  },
+  "azure-devops": {
+    "platform": "azure-devops", "organization": "EXAMPLE-ORG", "project": "EXAMPLE-PROJECT",
+    "states": {"backlog": "EXAMPLE-New", "ready": "EXAMPLE-Ready", "in_progress": "EXAMPLE-Active", "done": "EXAMPLE-Closed", "cancelled": "EXAMPLE-Removed"},
+    "kinds": {"project": "EXAMPLE-Epic", "decision": "EXAMPLE-Task", "task": "EXAMPLE-Task", "approval": "EXAMPLE-Task"},
+    "bindings": {}
+  },
+  "linear": {
+    "platform": "linear", "teamId": "EXAMPLE-TEAM-UUID",
+    "states": {"backlog": "EXAMPLE-BACKLOG-UUID", "ready": "EXAMPLE-READY-UUID", "in_progress": "EXAMPLE-ACTIVE-UUID", "done": "EXAMPLE-DONE-UUID", "cancelled": "EXAMPLE-CANCELLED-UUID"},
+    "bindings": {}
+  },
+  "jira": {
+    "platform": "jira", "baseUrl": "https://EXAMPLE.atlassian.net", "projectKey": "EXAMPLE",
+    "states": {"backlog": "EXAMPLE-BACKLOG-STATUS-ID", "ready": "EXAMPLE-READY-STATUS-ID", "in_progress": "EXAMPLE-ACTIVE-STATUS-ID", "done": "EXAMPLE-DONE-STATUS-ID", "cancelled": "EXAMPLE-CANCELLED-STATUS-ID"},
+    "kinds": {"project": "EXAMPLE-EPIC-TYPE-ID", "decision": "EXAMPLE-TASK-TYPE-ID", "task": "EXAMPLE-TASK-TYPE-ID", "approval": "EXAMPLE-TASK-TYPE-ID"},
+    "blockLink": {"typeName": "Blocks", "sourceEnd": "inwardIssue", "verified": false},
+    "bindings": {}
+  }
+}
